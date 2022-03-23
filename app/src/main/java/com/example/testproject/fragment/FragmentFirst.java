@@ -26,7 +26,6 @@ public class FragmentFirst extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_first, container, false);
 
         button = view.findViewById(R.id.button);
@@ -38,19 +37,6 @@ public class FragmentFirst extends Fragment  {
                 intent.putExtra("status", true);
                 getActivity().startService(intent);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
         });
         return view;
@@ -61,10 +47,8 @@ public class FragmentFirst extends Fragment  {
     public void onResume() {
         super.onResume();
         data = getArguments().getInt("key");
-        Integer position = getArguments().getInt("position");
-        Log.d("TAG", "data = " + data);
 
-        //  button.setText(data);
+
         mDataPasser.onDataPass(data);
     }
 

@@ -37,14 +37,13 @@ public class FragmentAdapter extends FragmentStateAdapter {
 
     @Override
     public Fragment createFragment(int position) {
-        Log.d("TAG", "position = " + position);
+
         Bundle bundle = new Bundle();
-        Log.d("TAG", "arrayList.get(position)" + arrayList.get(position));
+
         bundle.putInt("key", arrayList.get(position));
         FragmentFirst fragmentFirst = new FragmentFirst();
-
         fragmentFirst.setArguments(bundle);
-        Log.d("TAG", "bundle = " + bundle);
+
         return fragmentFirst;
 
     }
@@ -63,11 +62,6 @@ public class FragmentAdapter extends FragmentStateAdapter {
         fragmentFirst.setArguments(bundle);
     }
 
-    @Override
-    public long getItemId(int position) {
-        Log.d("tag", "position adapter = " + position);
-        return position;
-    }
 
 
     @Override

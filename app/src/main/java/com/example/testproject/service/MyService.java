@@ -47,8 +47,6 @@ public class MyService extends Service {
 
         status = intent.getBooleanExtra("status", true);
 
-
-
         if(status){
             data = intent.getIntExtra("data", 1);
             sendNotification();
@@ -75,7 +73,6 @@ public class MyService extends Service {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void sendNotification() {
 
-        Log.d("NOTIFICATION_APP", "1");
 
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
@@ -103,7 +100,7 @@ public class MyService extends Service {
         manager.notify(data, notification);
 
 
-        Log.d("NOTIFICATION", "2");
+
 
 
     }
